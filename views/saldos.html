@@ -29,122 +29,6 @@
 
 <body class="theme-red" ng-controller="homeCtrl">
 
-<!--Saldos ({{usuario.USUNOM}})
-
-<ul>
-    <li><a href="home.html">Inicio</a></li>
-    <li><a href="saldos.html">Saldos</a></li>
-    <li><a href="movimientos.html">Movimientos</a></li>
-</ul>
-
-<h3>Reporte de saldos</h3>
-<p style='color:#000;'>Seleccione un año para poder ver el saldo correspondiente.</p>
-
-<form ng-submit='saldoschange()'>
-    <input id="busqueda" class="form-control" type='number' ng-model='data.anio' placeholder='Introduzca el año de búsqueda'/>
-    <button type="submit">Consultar</button>
-    <a href="javascript:void(0)" ng-click="veractual()">Ver año actual</a>
-</form>
-
-<table ng-if='saldo!=null' border="1">
-    <thead>
-        <tr>
-            <th>{{saldo.SALANO}}</th>
-            <th>DEBE</th>
-            <th>HABER</th>
-            <th>SALDO</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th colspan='3'>Saldo Inicial</th>
-            <th> $ {{saldo.SALSAI}}</th>
-        </tr>
-        <tr>
-            <th> Enero</th>
-            <th> $ {{saldo.SALD01}}</th>
-            <th> $ {{saldo.SALH01}}</th>
-            <th> $ {{saldo.SALD01 - saldo.SALH01}}</th>
-        </tr>
-        <tr>
-            <th> Febrero</th>
-            <th> $ {{saldo.SALD02}}</th>
-            <th> $ {{saldo.SALH02}}</th>
-            <th> $ {{saldo.SALD02 - saldo.SALH02}}</th>
-        </tr>
-        <tr>
-            <th> Marzo</th>
-            <th> $ {{saldo.SALD03}}</th>
-            <th> $ {{saldo.SALH03}}</th>
-            <th> $ {{saldo.SALD03 - saldo.SALH03}}</th>
-        </tr>
-        <tr>
-            <th> Abril</th>
-            <th> $ {{saldo.SALD04}}</th>
-            <th> $ {{saldo.SALH04}}</th>
-            <th> $ {{saldo.SALD04 - saldo.SALH04}}</th>
-        </tr>
-        <tr>
-            <th> Mayo</th>
-            <th> $ {{saldo.SALD05}}</th>
-            <th> $ {{saldo.SALH05}}</th>
-            <th> $ {{saldo.SALD05 - saldo.SALH05}}</th>
-        </tr>
-        <tr>
-            <th> Junio</th>
-            <th> $ {{saldo.SALD06}}</th>
-            <th> $ {{saldo.SALH06}}</th>
-            <th> $ {{saldo.SALD06 - saldo.SALH06}}</th>
-        </tr>
-        <tr>
-            <th> Julio</th>
-            <th> $ {{saldo.SALD07}}</th>
-            <th> $ {{saldo.SALH07}}</th>
-            <th> $ {{saldo.SALD07 - saldo.SALH07}}</th>
-        </tr>
-        <tr>
-            <th> Agosto</th>
-            <th> $ {{saldo.SALD08}}</th>
-            <th> $ {{saldo.SALH08}}</th>
-            <th> $ {{saldo.SALD08 - saldo.SALH08}}</th>
-        </tr>
-        <tr>
-            <th> Septiembre</th>
-            <th> $ {{saldo.SALD09}}</th>
-            <th> $ {{saldo.SALH09}}</th>
-            <th> $ {{saldo.SALD09 - saldo.SALH09}}</th>
-        </tr>
-        <tr>
-            <th> Octubre</th>
-            <th> $ {{saldo.SALD10}}</th>
-            <th> $ {{saldo.SALH10}}</th>
-            <th> $ {{saldo.SALD10 - saldo.SALH10}}</th>
-        </tr>
-        <tr>
-            <th> Noviembre</th>
-            <th> $ {{saldo.SALD11}}</th>
-            <th> $ {{saldo.SALH11}}</th>
-            <th> $ {{saldo.SALD11 - saldo.SALH11}}</th>
-        </tr>
-        <tr>
-            <th> Diciembre</th>
-            <th> $ {{saldo.SALD12}}</th>
-            <th> $ {{saldo.SALH12}}</th>
-            <th> $ {{saldo.SALD12 - saldo.SALH12}}</th>
-        </tr>
-        <tr>
-            <th> Total</th>
-            <th></th>
-            <th></th>
-            <th> $ {{ (saldo.SALD12 - saldo.SALH12) + (saldo.SALD11 - saldo.SALH11) +(saldo.SALD10 - saldo.SALH10) +(saldo.SALD09 - saldo.SALH09) +(saldo.SALD08 - saldo.SALH08) +(saldo.SALD07 - saldo.SALH07) +(saldo.SALD06 - saldo.SALH06) +(saldo.SALD05 - saldo.SALH05) +(saldo.SALD04 - saldo.SALH04) +(saldo.SALD03 - saldo.SALH03) +(saldo.SALD02 - saldo.SALH02) +(saldo.SALD01 - saldo.SALH01) }}
-            </th>
-        </tr>
-    </tbody>
-</table>
-
-<div class="message"></div-->
-
-
 <body class="theme-red" ng-controller="homeCtrl" ng-cloak>>
 <!-- Page Loader -->
     <div class="page-loader-wrapper">
@@ -178,7 +62,7 @@
             <div class="navbar-header">
                 <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
                 <a href="javascript:void(0);" class="bars"></a>
-                <a class="navbar-brand" href="index.html">ABCWELCOME</a>
+                <a class="navbar-brand" href="javascript:void(0)">ABCWELCOME</a>
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
