@@ -57,7 +57,7 @@ myapp.controller('homeCtrl', ['$scope', '$http', function($scope, $http){
 	            $(".message").html('<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>'+response.data.message+'.</div>');
 	            $(".message").css("display","block");
 	            $scope.traspaso = {};
-	            $http.get(url_server+"user/get/"+$scope.traspaso.USUCEL2).then(function(response){
+	            /*$http.get(url_server+"user/get/"+$scope.traspaso.USUCEL2).then(function(response){
 			if(response.data.status){
 				var mensaje = {
 					iduser: response.data.user._id,
@@ -66,7 +66,7 @@ myapp.controller('homeCtrl', ['$scope', '$http', function($scope, $http){
 	                	}
 				$http.post(url_server+"push/", mensaje);
 			}
-		    });
+		    });*/
           	}else{
             	$(".message").html('<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>'+response.data.message+'.</div>');
             	$(".message").css("display","block");
