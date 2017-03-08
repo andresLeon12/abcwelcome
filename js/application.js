@@ -44,6 +44,7 @@ myapp.controller('homeCtrl', ['$scope', '$http', function($scope, $http){
 
         $scope.traspaso.USUCEL1 = $scope.usuario.USUCEL;
         $scope.traspaso.USUTIP = $scope.usuario.USUTIP;
+	var saldo = $scope.traspaso.USUSAL;
         var data2 = {
         	USUCEL1: $scope.traspaso.USUCEL2
         }
@@ -57,16 +58,17 @@ myapp.controller('homeCtrl', ['$scope', '$http', function($scope, $http){
 	            $(".message").html('<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>'+response.data.message+'.</div>');
 	            $(".message").css("display","block");
 	            $scope.traspaso = {};
-	            /*$http.get(url_server+"user/get/"+$scope.traspaso.USUCEL2).then(function(response){
-			if(response.data.status){
-				var mensaje = {
-					iduser: response.data.user._id,
-					title: "-ABCWELCOME- ¡Abono de saldo!",
-					message: "Has recargado $"+$scope.traspaso.USUSAL+" de saldo."
+	            $http.get(url_server+"user/get/"+$scope.traspaso.USUCEL2).then(function(resp){
+					if(resp.data.status){
+						var mensaje = {
+							iduser: resp.data.user._id,
+							title: "¡Abono de saldo!",
+							message: "Has recargado $"+saldo+" de saldo."
 	                	}
-				$http.post(url_server+"push/", mensaje);
-			}
-		    });*/
+						$http.post(url_server+"push/", mensaje);
+					}
+				});
+		    $scope.traspaso = {};
           	}else{
             	$(".message").html('<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>'+response.data.message+'.</div>');
             	$(".message").css("display","block");
