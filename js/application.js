@@ -57,16 +57,16 @@ myapp.controller('homeCtrl', ['$scope', '$http', function($scope, $http){
 	            $(".message").html('<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>'+response.data.message+'.</div>');
 	            $(".message").css("display","block");
 	            $scope.traspaso = {};
-	            /*$http.get(url_server+"user/get/"+$scope.traspaso.USUCEL2).success(function(response){
-					if(response.status){
-						var mensaje = {
-							iduser: response.user._id,
-							title: "¡Abono de saldo!",
-							message: "Has recargado $"+$scope.traspaso.USUSAL+" de saldo."
+	            $http.get(url_server+"user/get/"+$scope.traspaso.USUCEL2).success(function(response){
+			if(response.data.status){
+				var mensaje = {
+					iduser: response.data.user._id,
+					title: "-ABCWELCOME- ¡Abono de saldo!",
+					message: "Has recargado $"+$scope.traspaso.USUSAL+" de saldo."
 	                	}
-						$http.post(url_server+"push/", mensaje);
-					}
-				});*/
+				$http.post(url_server+"push/", mensaje);
+			}
+		    });
           	}else{
             	$(".message").html('<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>'+response.data.message+'.</div>');
             	$(".message").css("display","block");
