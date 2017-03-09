@@ -164,15 +164,28 @@ myapp.controller('homeCtrl', ['$scope', '$http', function($scope, $http){
   }
   
   socket.on('updateSaldo', function(data){
+		alert("updateSaldo");
 		if(data.USUCEL1 == $scope.usuario.USUCEL){
+			alert("updateSaldo 1");
 			$http.get(url_server+"user/get/"+$scope.usuario.USUCEL).then(function(response){
 				if(response.data.status){
+					alert("Se abono saldo!");
 					localStorage.setItem("usuario", JSON.stringify(response.data.user));
 					$scope.usuario = response.data.user;
 				}
 			});
 		}
 	});
+
+	$scope.actualizar = function(){
+		alert("actualizar");
+		$http.get(url_server+"user/get/"+$scope.usuario.USUCEL).then(function(response){
+			if(response.data.status){
+				localStorage.setItem("usuario", JSON.stringify(response.data.user));
+				$scope.usuario = response.data.user;
+			}
+		});
+	}
   
   $scope.logout = function(){
   	localStorage.removeItem("usuario")
