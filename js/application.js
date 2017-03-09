@@ -1,7 +1,7 @@
 var myapp = angular.module('abcwelcome', [])
 //var url_server = 'http://192.168.0.109:8080/';
 var url_server = 'http://192.81.214.19:8080/';
-//var socket = io.connect(url_server);
+var socket = io.connect(url_server);
 
 /* Controlador para el login */
 myapp.controller('loginCtrl', ['$scope', '$http', function($scope, $http){
@@ -33,6 +33,19 @@ myapp.controller('homeCtrl', ['$scope', '$http', function($scope, $http){
 		window.location.href = '../index.html'
 	}
     $scope.usuario = JSON.parse(usuario);// toda la informacion acerca del usuario
+	
+	
+
+	socket.on('updateSaldo', function(data)){
+		if(data.USUCEL1 == $scope.usuario.USUCEL){
+			$http.get(url_server+"user/get/"+$scope.usuario.USUCEL).then(function(response){
+				if(response.data.status){
+					localStorage.setItem("usuario", JSON.stringify(response.data.user));
+					$scope.usuario = response.data.user;
+				}
+			});
+		}
+	}
     //alert("User "+$scope.usuario._id);
     //traspaso
     $scope.traspasoSaldo = function(){
