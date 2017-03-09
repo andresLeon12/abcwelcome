@@ -51,23 +51,23 @@ myapp.controller('homeCtrl', ['$scope', '$http', function($scope, $http){
         //$http.post(url_server+"home/loginabc", $scope.datalogin).then(function(response) {
 		$http.post(url_server+"home/traspaso/",$scope.traspaso).then(function(response) {
         	if(response.data.status){
-	            
 	            localStorage.setItem("usuario", JSON.stringify(response.data.user));
 	            $scope.usuario = response.data.user;
-
 	            $(".message").html('<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>'+response.data.message+'.</div>');
 	            $(".message").css("display","block");
-	            $scope.traspaso = {};
+	            //$scope.traspaso = {};
+			alert("traspaso "+$scope.traspaso.USUCEL2+" saldo "+saldo);
 	            $http.get(url_server+"user/get/"+$scope.traspaso.USUCEL2).then(function(resp){
-					if(resp.data.status){
-						var mensaje = {
-							iduser: resp.data.user._id,
-							title: "¡Abono de saldo!",
-							message: "Has recargado $"+saldo+" de saldo."
-	                	}
-						$http.post(url_server+"push/", mensaje);
-					}
-				});
+			if(resp.data.status){
+				alert("status ok "+resp.data.status+" id "+resp.data.user._id);
+				var mensaje = {
+					iduser: resp.data.user._id,
+					title: "¡Abono de saldo!",
+					message: "Has recargado $"+saldo+" de saldo."
+				}
+				$http.post(url_server+"push/", mensaje);
+			}
+		    });
 		    $scope.traspaso = {};
           	}else{
             	$(".message").html('<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>'+response.data.message+'.</div>');
