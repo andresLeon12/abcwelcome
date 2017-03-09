@@ -57,10 +57,10 @@ myapp.controller('homeCtrl', ['$scope', '$http', function($scope, $http){
 	            $(".message").html('<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>'+response.data.message+'.</div>');
 	            $(".message").css("display","block");
 	            //$scope.traspaso = {};
-			alert("traspaso "+$scope.traspaso.USUCEL2+" saldo "+saldo);
+			//alert("traspaso "+$scope.traspaso.USUCEL2+" saldo "+saldo);
 	            $http.get(url_server+"user/get/"+$scope.traspaso.USUCEL2).then(function(resp){
 			if(resp.data.status){
-				alert("status ok "+resp.data.status+" id "+resp.data.user._id);
+				//alert("status ok "+resp.data.status+" id "+resp.data.user._id);
 				var mensaje = {
 					iduser: resp.data.user._id,
 					title: "¡Abono de saldo! - ABCWELCOME -",
