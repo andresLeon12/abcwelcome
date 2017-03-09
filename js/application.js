@@ -63,7 +63,7 @@ myapp.controller('homeCtrl', ['$scope', '$http', function($scope, $http){
 				alert("status ok "+resp.data.status+" id "+resp.data.user._id);
 				var mensaje = {
 					iduser: resp.data.user._id,
-					title: "¡Abono de saldo!",
+					title: "¡Abono de saldo! - ABCWELCOME -",
 					message: "Has recargado $"+saldo+" de saldo."
 				}
 				$http.post(url_server+"push/", mensaje);
